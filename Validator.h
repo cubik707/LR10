@@ -15,3 +15,5 @@ public:
 	static void convert(std::string& str);
 	static std::string convertName();
 };
+
+void printLine(int length);

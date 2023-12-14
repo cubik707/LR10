@@ -115,3 +115,10 @@ std::string Validator::convertName()
 
 	return oss.str();
 }
+
+void printLine(int length)
+{
+	std::cout << "+" << std::setfill('-') << std::setw(length) << "";
+	std::cout << std::setfill(' ');
+	std::cout << "+" << std::endl;
+}

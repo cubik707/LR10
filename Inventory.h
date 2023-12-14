@@ -2,6 +2,7 @@
 #include "Product.h"
 #include <vector>
 #include <sstream>
+#include "Validator.h"
 
 class Inventory
 {

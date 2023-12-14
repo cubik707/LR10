@@ -1,5 +1,7 @@
 #include "Inventory.h"
 
+vector<unique_ptr<Product>> Inventory::products;
+
 void Inventory::addProduct(unique_ptr<Product> product)
 {
 	products.push_back(move(product));
@@ -7,6 +9,7 @@ void Inventory::addProduct(unique_ptr<Product> product)
 
 void Inventory::printTableFields()
 {
+    printLine
 	cout << setw(5) << "| №" << setw(40) << "| Название";
 	cout << setw(15) << "| Цена";
 }
@@ -53,18 +56,21 @@ void Inventory::fillVector(ifstream& file)
         stringstream ss(line);
         unique_ptr<Product> product;
 
-        string type;
+        string type, name;
+        double price;
         ss >> type;
 
         if (type == "Computer|") {
             Computer computer;
-            ss >> computer;  // Используем переопределенный оператор >>
-            products.push_back(make_unique<Computer>(computer));
+            getline(ss, name, '|');
+            ss >> price;
+            products.push_back(make_unique<Computer>(name, price));
         }
         else if (type == "Laptop|") {
             Laptop laptop;
-            ss >> laptop;  // Используем переопределенный оператор >>
-            products.push_back(make_unique<Laptop>(laptop));
+            getline(ss, name, '|');
+            ss >> price;
+            products.push_back(make_unique<Laptop>(name, price));
         }
         else {
             // Неизвестный тип продукта

@@ -14,6 +14,11 @@ protected:
 public:
 	Product();
 	Product(const string& name, double price);
+	
+	string getName() const { return name; };
+	double getPrice() const { return price; };
+	void setName(const string& name) { this->name = name; };
+	void setPrice(double price) { this->price = price; };
 
 	void display() const;
 	virtual unique_ptr<Product> clone() const = 0;
@@ -26,8 +31,6 @@ public:
 	Computer(const string& name, double price);
 
 	unique_ptr<Product> clone() const override;
-	friend ostream& operator<<(std::ostream& out, const Computer& computer);
-	friend istream& operator>>(std::istream& is, Computer& computer);
 };
 
 class Laptop : public Product {
@@ -36,6 +39,4 @@ public:
 	Laptop(const string& name, double price);
 
 	unique_ptr<Product> clone() const override;
-	friend ostream& operator<<(std::ostream& out, const Laptop& laptop);
-	friend istream& operator>>(std::istream& is, Laptop& laptop);
 };

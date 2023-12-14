@@ -1,7 +1,7 @@
-Computer|Gaming PC|1500.00
-Laptop|UltraBook|1200.00
-Computer|Office PC|800.00
-Laptop|Multimedia Laptop|1000.00
-Computer|Home PC|600.00
-Laptop|Student Laptop|700.00
-Computer|Workstation|2000.00
+Computer| Gaming PC|1500.00
+Laptop| UltraBook|1200.00
+Computer| Office PC|800.00
+Laptop| Multimedia Laptop|1000.00
+Computer| Home PC|600.00
+Laptop| Student Laptop|700.00
+Computer| Workstation|2000.00
