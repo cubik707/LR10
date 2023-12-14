@@ -129,7 +129,7 @@
   <ItemGroup>
     <ClCompile Include="Factory.cpp" />
     <ClCompile Include="Inventory.cpp" />
-    <ClCompile Include="LR10.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Product.cpp" />
     <ClCompile Include="Validator.cpp" />

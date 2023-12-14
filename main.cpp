@@ -11,4 +11,5 @@ int main()
 
 	Inventory::readFromFile();
 	Menu::showMenu();
+	Inventory::writeToFile();
 }

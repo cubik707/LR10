@@ -121,3 +121,44 @@ void Inventory::fillVector(ifstream& file)
         }
     }
 }
+
+void Inventory::writeToFile()
+{
+    ofstream file;
+    file.exceptions(fstream::failbit | fstream::badbit);
+
+    try
+    {
+        file.open("inventory_.txt", ios::out | ios::trunc); // Открываем файл для записи, существующий файл будет перезаписан
+
+        if (file.bad()) {
+            throw runtime_error("Ошибка в открытии файла для записи.");
+        } 
+
+        for (const auto& product : products) {
+            switch (product->getType())
+            {
+            case ProductType::COMPUTER:
+                file << "Computer|";
+                break;
+            case ProductType::LAPTOP:
+                file << "Laptop|";
+                break;
+            }
+            file << product->getName() << "|" << product->getPrice() << endl;
+        }
+        cout << "Данные о товарах успешно сохранены в файле!" << endl;
+        file.close();
+    }
+    catch (const ios_base::failure& e)
+    {
+        // Обрабатываем ошибку, используя флаги статуса ошибок
+        cerr << "Ошибка ввода-вывода: " << e.what() << endl;
+        exit(0);
+    }
+    catch (const runtime_error& e)
+    {
+        cerr << e.what() << endl;
+        exit(0);
+    }
+}

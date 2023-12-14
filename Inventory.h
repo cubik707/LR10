@@ -21,6 +21,6 @@ public:
 
 	static void readFromFile();
 	static void fillVector(ifstream& file);
-	static void writeFromFile();
+	static void writeToFile();
 };
 

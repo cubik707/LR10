@@ -1,0 +1,7 @@
+Computer|Gaming PC|1500
+Laptop|UltraBook|1200
+Computer|Office PC|800
+Laptop|Multimedia Laptop|1000
+Computer|Home PC|600
+Laptop|Student Laptop|700
+Computer|Workstation|2000

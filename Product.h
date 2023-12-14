@@ -26,6 +26,8 @@ public:
 	void setName(const string& name) { this->name = name; };
 	void setPrice(double price) { this->price = price; };
 
+	virtual ProductType getType() const = 0;
+
 	void display() const;
 	virtual unique_ptr<Product> clone() const = 0;
 	
@@ -37,6 +39,7 @@ public:
 	Computer(const string& name, double price);
 
 	unique_ptr<Product> clone() const override;
+	ProductType getType() const override { return ProductType::COMPUTER; }
 };
 
 class Laptop : public Product {
@@ -45,4 +48,5 @@ public:
 	Laptop(const string& name, double price);
 
 	unique_ptr<Product> clone() const override;
+	ProductType getType() const override { return ProductType::LAPTOP; }
 };
