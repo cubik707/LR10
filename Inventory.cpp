@@ -66,13 +66,15 @@ void Inventory::fillVector(ifstream& file)
             Computer computer;
             getline(ss, name, '|');
             ss >> price;
-            products.push_back(make_unique<Computer>(name, price));
+            ComputerFactory factory;
+            products.push_back(factory.create(name, price));
         }
         else if (type == "Laptop|") {
             Laptop laptop;
             getline(ss, name, '|');
             ss >> price;
-            products.push_back(make_unique<Laptop>(name, price));
+            LaptopFactory factory;
+            products.push_back(factory.create(name, price));
         }
         else {
             // Неизвестный тип продукта

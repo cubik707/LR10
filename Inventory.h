@@ -3,6 +3,7 @@
 #include <vector>
 #include <sstream>
 #include "Validator.h"
+#include "Factory.h"
 
 #define LINE_LENGTH 41
 
