@@ -7,6 +7,7 @@ class Menu
 {
 public:
 	static void showMenu();
-
+	
+	static void add();
 };
 

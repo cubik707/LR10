@@ -2,10 +2,59 @@
 
 vector<unique_ptr<Product>> Inventory::products;
 
-void Inventory::addProduct(unique_ptr<Product> product)
+void Inventory::add(unique_ptr<Product> product)
 {
 	products.push_back(move(product));
 }
+
+//void Inventory::remove(const string& name)
+//{
+//    auto it = std::remove_if(products.begin(), products.end(), [&name](const unique_ptr<Product>& product) {
+//        return product->getName() == name;
+//        });
+//
+//    if (it != products.end()) {
+//        products.erase(it, products.end());
+//        cout << "Продукт успешно удален." << endl;
+//    }
+//    else {
+//        cout << "Продукт с таким названием не найден." << endl;
+//    }
+//}
+
+//void Inventory::edit(const string& name)
+//{
+//    auto it = std::find_if(products.begin(), products.end(), [&name](const unique_ptr<Product>& product) {
+//        return product->getName() == name;
+//        });
+//
+//    if (it != products.end()) {
+//        // Редактируем найденный продукт
+//        cout << "Введите новое название продукта: ";
+//        string newName = Validator::convertName();
+//        (*it)->setName(newName);
+//
+//        cout << "Введите новую цену продукта: ";
+//        double newPrice = Validator::getDoubleVar(0, INT_MAX);
+//        (*it)->setPrice(newPrice);
+//
+//        cout << "Продукт успешно отредактирован." << endl;
+//    }
+//    else {
+//        cout << "Продукт с таким названием не найден." << endl;
+//    }
+//}
+
+//unique_ptr<Product> Inventory::searchByName(const string& name)
+//{
+//    for (auto it = products.begin(); it != products.end(); ++it) {
+//        if ((*it)->getName() == name) {
+//            return make_unique<Product>(**it);
+//        }
+//    }
+//
+//    throw runtime_error("Продукт с таким названием не найден.");
+//}
 
 void Inventory::printTableFields()
 {

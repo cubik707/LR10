@@ -5,6 +5,12 @@
 #include <fstream>
 #include <string>
 
+
+enum class ProductType {
+	COMPUTER,
+	LAPTOP
+};
+
 using namespace std;
 class Product
 {
