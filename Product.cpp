@@ -12,10 +12,10 @@ Product::Product(const string& name, double price)
 
 void Product::display() const
 {
-	cout.setf(ios::left | ios::fixed | ios::dec);
+	cout.setf(ios::left);
 	cout << "| " << setw(20) << name;
-	cout << "| " << setw(13) << price << "|" << endl;
-	cout.unsetf(ios::left | ios::fixed | ios::dec);
+	cout << "| " << setw(13) << price << noshowpoint << "|" << endl;
+	cout.unsetf(ios::left);
 }
 
 

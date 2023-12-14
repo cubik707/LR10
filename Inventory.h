@@ -15,7 +15,6 @@ public:
 	static void add(unique_ptr<Product> product);
 	static void remove(const string& name);
 	static void edit(const string& name);
-	static unique_ptr<Product> searchByName(const string& name);
 
 	static void printTableFields();
 	static void printProducts();

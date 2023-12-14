@@ -10,7 +10,7 @@ void Menu::showMenu()
 		cout << "3 - Удалить данные" << endl;
 		cout << "4 - Редактировать данные" << endl;
 		cout << "0 - Назад" << endl;
-		int choice = Validator::getIntVar(0, 6);
+		int choice = Validator::getIntVar(0, 4);
 		switch (choice) {
 		case 1:
 			Inventory::printTableFields();
@@ -20,15 +20,17 @@ void Menu::showMenu()
 			add();
 			break;
 		case 3: {
-			//cout << "Введите название продукта: ";
-			//string name = Validator::convertName();
-			//Inventory::remove(name);
+			cout << "Введите название продукта: ";
+			cin.ignore();
+			string name = Validator::getValidStr();
+			Inventory::remove(name);
 		}
 			break;
 		case 4: {
-			//cout << "Введите название продукта: ";
-			//string name = Validator::convertName();
-			//Inventory::edit(name);
+			cout << "Введите название продукта: ";
+			cin.ignore();
+			string name = Validator::getValidStr();
+			Inventory::edit(name);
 		}
 			break;
 		case 0:
@@ -59,7 +61,7 @@ void Menu::add()
 	if (factory) {
 		cout << "Введите название продукта: ";
 		cin.ignore();
-		string name = Validator::convertName();
+		string name = Validator::getValidStr();
 
 		cout << "Введите цену продукта: ";
 		double price = Validator::getDoubleVar(0, INT_MAX);
