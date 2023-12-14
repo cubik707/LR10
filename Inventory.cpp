@@ -9,9 +9,10 @@ void Inventory::addProduct(unique_ptr<Product> product)
 
 void Inventory::printTableFields()
 {
-    printLine
-	cout << setw(5) << "| №" << setw(40) << "| Название";
-	cout << setw(15) << "| Цена";
+    printLine(LINE_LENGTH);
+	cout << setw(5) << "| №" << setw(22) << "| Название";
+    cout << setw(15) << "| Цена" << "|" << endl;
+    printLine(LINE_LENGTH);
 }
 
 void Inventory::printProducts()
@@ -20,6 +21,7 @@ void Inventory::printProducts()
 	for (const auto& product : products) {
 		cout << left << setw(5) << "| " + to_string(i++);
 		product->display();
+        printLine(LINE_LENGTH);
 	}
 }
 

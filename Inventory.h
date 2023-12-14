@@ -4,6 +4,8 @@
 #include <sstream>
 #include "Validator.h"
 
+#define LINE_LENGTH 41
+
 class Inventory
 {
 private:

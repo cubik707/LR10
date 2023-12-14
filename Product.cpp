@@ -14,7 +14,7 @@ void Product::display() const
 {
 	cout.setf(ios::left | ios::fixed | ios::dec);
 	cout << "| " << setw(20) << name;
-	cout << "| " << setw(13) << price;
+	cout << "| " << setw(13) << price << "|" << endl;
 	cout.unsetf(ios::left | ios::fixed | ios::dec);
 }
 
